@@ -28,7 +28,7 @@ class EsMetrics(threading.Thread):
             'search': ['query_total', 'query_time_in_millis', 'query_current', 'fetch_total', 'fetch_time_in_millis', 'fetch_current'],
             'indexing': ['index_total', 'index_current', 'index_time_in_millis', 'delete_total', 'delete_current', 'delete_time_in_millis'],
             'docs': ['count', 'deleted'],
-            'store': ['size_in_bytes', 'throttle_time_in_millis']
+            'store': ['size_in_bytes']
         }
         self.cluster_metrics = ['status', 'number_of_nodes', 'number_of_data_nodes', 'active_primary_shards', 'active_shards', 'unassigned_shards']
         self.counter_keywords = ['query_total', 'query_time_in_millis',
