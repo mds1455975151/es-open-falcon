@@ -71,12 +71,12 @@ class EsMetrics(threading.Thread):
                 }
                 falcon_metrics.append(falcon_metric)
             if self.falcon_conf['test_run']:
-                print json.dumps(falcon_metrics)
+                print(json.dumps(falcon_metrics))
             else:
                 req = requests.post(self.falcon_conf['push_url'], data=json.dumps(falcon_metrics))
-                print datetime.now(), "INFO: [%s]" % self.es_conf['endpoint'], "[%s]" % self.falcon_conf['push_url'], req.text
+                print(datetime.now(), "INFO: [%s]" % self.es_conf['endpoint'], "[%s]" % self.falcon_conf['push_url'], req.text)
         except Exception as e:
             if self.falcon_conf['test_run']:
                 raise
             else:
-                print datetime.now(), "ERROR: [%s]" % self.es_conf['endpoint'], e
+                print(datetime.now(), "ERROR: [%s]" % self.es_conf['endpoint'], e)
